@@ -12,9 +12,10 @@ const SignIn = ({ navigation }: any) => {
       <MyBlur />
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.container}>
+          
 
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Hello again!</Text>
+            <Text style={styles.title}>Hola de nuevo!</Text>
             <Text style={styles.body}>Ingresa para ver a tus personajes! </Text>
 
             <TextInput
@@ -32,7 +33,7 @@ const SignIn = ({ navigation }: any) => {
               <Text style={[styles.buttonText, { fontWeight: 'bold', lineHeight: 30, textAlign: 'right' }]}>Recuperar Password</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.signInButton}>
+            <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('Chacarters')}>
 
               <Text style={{ color: 'white', fontWeight: 'bold' }}>Ingresar</Text>
             </TouchableOpacity>
@@ -65,11 +66,7 @@ const SignIn = ({ navigation }: any) => {
                   style={{width: 40, height: 40, borderRadius: 50}}
                 />
               </TouchableOpacity>
-              {/* <TouchableOpacity style={styles.button2}
-                onPress={() => navigation.navigate('SignIn')}
-              >
-                <Text style={styles.buttonText}>Login</Text>
-              </TouchableOpacity> */}
+              
             </View>
 
 

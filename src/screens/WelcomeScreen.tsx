@@ -13,7 +13,7 @@ const WelcomeScreen = ({navigation}:any) => {
             <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.container}>
                     <Image
-                        source={require('../assets/logo.png')}
+                        source={require('../assets/rick.png')}
                         style={{
                             width: '70%',
                             height: (height / 6) * 2,
