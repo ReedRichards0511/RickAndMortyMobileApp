@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import React, { useEffect, useState } from 'react'
 import { RickAndMortyApi } from '../api/RickAndMortyApi';
 import { CharacterInfo, ChacartersData } from '../interfaces/CharactersInterface';
@@ -21,7 +21,12 @@ const CharactersScreen = () => {
             <View style={styles.globalMargin}>
                 {
                     isLoading ?
-                        <Text>Loading...</Text>
+                        (
+                            <View style={styles.loadingContainer}>
+                                <Text style={{ fontSize: 20 }}>Loading...</Text>
+                                <ActivityIndicator size={65} animating={true} />
+                            </View>
+                        )
                         :
 
                         <View style={styles.titleContainer}>
@@ -41,7 +46,7 @@ const CharactersScreen = () => {
                                     <Text style={styles.buttonText}>Anterior</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.button2}
-                                  onPress={paginaSiguiente}
+                                    onPress={paginaSiguiente}
                                 >
                                     <Text style={styles.buttonText}>Siguiente</Text>
                                 </TouchableOpacity>
@@ -102,5 +107,12 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         borderRadius: 16,
         backgroundColor: '#DFE3E630',
+    },
+    loadingContainer: {
+        marginBottom: 300,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
+
 })
