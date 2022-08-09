@@ -1,15 +1,28 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react'
 import { CharacterInfo } from '../interfaces/CharactersInterface';
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 interface Props {
-    character: CharacterInfo
+    character: CharacterInfo,
 }
 
 export const CharacterCard = ({ character }: Props) => {
+
+    const navigation = useNavigation();
+
+
     return (
         <TouchableOpacity
             activeOpacity={0.5}
+            onPress={
+                () => navigation.navigate('Character' as never,
+                    { characterInfo: character } as never
+                )
+            }
             style={{
                 display: 'flex',
                 flexDirection: 'column',

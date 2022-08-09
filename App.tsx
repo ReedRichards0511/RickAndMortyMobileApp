@@ -8,13 +8,17 @@ import {
   StatusBar,
   useColorScheme,
 } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 
 
 
 const App = () => {
 
   return (
-      <AppRouter/>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   );
 };
 

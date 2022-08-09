@@ -1,16 +1,18 @@
+import React from 'react'
 import { FlatList, StyleSheet, Text, View, TouchableOpacity, ActivityIndicator } from 'react-native';
-import React, { useEffect, useState } from 'react'
-import { RickAndMortyApi } from '../api/RickAndMortyApi';
-import { CharacterInfo, ChacartersData } from '../interfaces/CharactersInterface';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import MyBlur from '../components/MyBlur';
 import { useCharactersPaginated } from '../hooks/useCharactersPaginated';
 import { CharacterCard } from '../components/CharacterCard';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-const CharactersScreen = () => {
 
 
-    const { characters, isLoading, loadCharacters, paginaAnterior, paginaSiguiente } = useCharactersPaginated();
+
+
+
+const CharactersScreen = ({navigation}:any) => {
+
+
+    const { characters, isLoading, paginaAnterior, paginaSiguiente } = useCharactersPaginated();
 
 
 
